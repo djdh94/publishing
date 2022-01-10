@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지</title>
+</head>
+<body>
+    <!--이미지는 img태그를 이용해 표현합니다.
+    img 태그 내에 src="경로"를 입력시 이미지파일을 불러옵니다.-->
+    
+
+    <!--절대경로-->
+    <!--../../=>c:\라고 생각하시면 됩니다-->
+    <!--우리가 흔히 주소를 말할때 전체적인 주소는
+    "대한민국 서울특별시 ~~~~ "
+    절대경로는 모든 경로를 처음부터 다적음-->
+    <!-- 그림파일의 크기가 큰 경우 가로너비와 세로길이를
+    width,height값으로 조절할수있습니다.-->
+    <img src="c:/publishing/20220110/img/chicken.png"
+    widht='450px' height='300px'><br> <!--이미지도 인라인 태그-->
+    
+    <!--상대경로-->
+    <!--겹치는 구간까지는 생략하고, 이후 구간부터만 경로를 적는방식-->
+    <img src="img/cat.png"
+    width="100px" height="100px">
+    <!-- width="30%" <이렇게하면 기존사진에서 30프로 작게나옴 -->
+    <img src="#" alt="대체키워드(그림파일의 경로에 파일이 없을때 띄울키우드">
+
+</body>
+</html>
