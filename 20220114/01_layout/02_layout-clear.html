@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* 
+        clear는 float된 박스들의 흐름을 해체시키는 구문입니다.
+        float을 해체하지 않으면 추후 레이아웃 구성시
+        문제가 될 수 있으므로, inline 배치가 끝난 부분에
+        대해서는 반드시 해체를 해 줘야 합니다.
+        clear:left; - float된 박스 중 좌측이 짧을때 좌측부터
+        채워서 내려옴
+        clear:right; - float된 박스 중 우측이 짧을때 우측부터
+        채워서 내려옴
+        clear:both; 제일 많이 쓰고, 이 속성을 받은 태그는
+        float의 흐름과는 상관없이 다음줄로 강제로 내려옵니다
+        */
+        p{text-align: justify;}
+        div#wrapper{width: 550px;}
+
+        .skate{
+            float: left; width: 250px;
+            padding: 15px;
+            background-color: #ccc;
+        }
+
+        .football{
+            float: right;
+            width: 210px;
+            padding: 15px;
+            background-color: #eee; 
+        }
+        .olympic{
+            clear: both;
+            padding: 10px;
+            background-color: #8cc;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="skate">
+            <p>
+                우리의 자랑 스포츼의 꽃 김은호 선수의
+                요즘 행보에 대해 일부의 사람들이 불만을
+                토로하고 있다. 그녀의 주류광고 문제가
+                된 것인데 그렇다면 김은호는 미성년자도 아닌데
+                왜 주류강고 ㅅ그타들은......
+            </p>
+        </div>
+        <div class="football">
+            <p>
+                스포츠스타 박지수는 스타라는 말이좀 퇴폐적으로
+                여겨지던 시절 그말은 완전히 깨끗히 세척해서 원래
+                뜻 그대로 만들어놓은 사람입니다. 사람이 어쩌면 저렇게
+                참될 수 있을까 라고 생각하게 한 장본인.
+            </p>
+        </div>
+        <div class="olympic">
+            <p>
+                이번 올림픽은 기록에 남을 '판정번복 올림픽'이 될 것같다.
+                김지훈 선수의 어이없는 실격을 바로잡기 위한
+                이의 제기가 이렇게 많은 말도 안되는 판정번복의 길을
+                열어주다니 이래서 올림픽의 판정번복은 거의 없었나 보다.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
