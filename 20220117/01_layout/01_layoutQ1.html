@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{width: 550px;}
+    *{margin: 0px; padding: 0;}
+    #header{border: 2px dotted red;
+            height: 100px;
+            
+    }
+    #content{border: 2px solid blue;
+            height: 300px;
+            float: left; 
+    }
+    #footer{border: 2px dotted green;
+            height: 100px;
+            clear: both;
+    }
+    .sidebar{float: left;
+             width: 100px;
+             border: 1px solid slateblue;
+             height: 300px;
+           
+    }
+    .contents{float: left;
+                 border: 2px solid teal;
+                height: 300px;
+                width: 330px;
+    }
+    .rightsidebar{float: right;
+                border: 2px solid slateblue;
+                  height: 300px;
+                  width: 100px;
+    }
+    #content>div{display: inline-block;}
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="header">
+        헤더가 들어갈 자리입니다.
+    </div>
+    <div id="content">
+        <div class="sidebar">
+            사이드바 자리
+        </div>
+        <div class="contents">
+            컨텐츠자리
+        </div>
+        <div class="rightsidebar">
+            오른쪽 사이드바 
+        </div>
+    </div>
+    <div id="footer">
+        푸터가 들어갈 자리
+    </div>
+</body>
+</html>
