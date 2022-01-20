@@ -8,8 +8,7 @@
         if(num>2){//마지막 그림번호 초과시
         num=0;//첫그림 번호로 되돌리기
          }
-
-         console.log(document.getElementById("pic"))
+         console.log(document.getElementById("pic"));
          document.getElementById("pic").src
          = "img/img" + num +".jpg";
          // id가 pic인 요소(그림)의 src 속성을
@@ -22,10 +21,18 @@
     // 문제1: prePic 함수를 만들어서 사진을 뒤로 돌리는
     // 로직도 추가하기
     function prevPic(){
-        
+    num--;
+    if(num<0){
+        num=2;
+    }
+    console.log(document.getElementById("pic"));
+    document.getElementById("pic").src
+    = "img/img"+num+".jpg";
     }
     </script>
-   
+   <style>
+    a+a{vertical-align: bottom;}
+   </style>
     <title>Document</title>
 </head>
 <body>
@@ -34,5 +41,7 @@
     <img width="500px" src="img/img0.jpg" id="pic">
 
     <a href="#" onclick="return nextPic()">>></a>
+    <a href="#" onclick="return prevPic()">&lt;&lt;</a>
+    
 </body>
 </html>

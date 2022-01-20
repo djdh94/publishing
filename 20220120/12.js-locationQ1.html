@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+    // 문제
+    // confirm,조건문,location을 이용해서
+    // 현재 페이지를 보시겠습니까? 라고 먼저 물어보고
+    // 확인을 누르면 body태그 내에 h1태그를 자유롭게 적어서
+    // 그내용이 보이도록 하고 그렇지 않다면 네이버로 이동하기
+
+    var test=confirm("현재 페이지를 보시겠습니까?");
+
+    if(test===true){
+    document.getElementById("a");
+    }
+    else{
+        location.href=("https://www.naver.com");
+    }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="a">가나다라마바사</h1>
+</body>
+</html>
