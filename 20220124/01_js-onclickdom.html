@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+    // DOM 내부 요소를 고치는 작업을 해보기
+    // DOm 조작과 onclick 이벤틀르 같이 조합해서
+    // 사용자가 특정 요소를 클릭했을때 Dom 조작이  일어나도록 하기
+    // 모든 문서 로딩이 끝나고 스크립트를 실행하도록 초기세팅
+    window.onload = function() {
+            // #number, #increase, #decrease를 각각
+            // 변수 number, incBtn, decBtn에 저장해주세요.
+            var number = document.getElementById("number");
+            var incBtn = document.getElementById("increase");
+            var decBtn = document.getElementById("decrease");
+
+            console.log(number.parentNode);
+            // #increase, #decrease의 부모태그 접근을 이용해
+            // body태그를 마찬가지로 화면에 찍어보세요.
+            console.log(incBtn.parentNode.parentNode);
+            
+            // div를 변수에 저장하고 콘솔에 찍기 
+            // tagName으로 얻어오기
+            // div가 콘솔에 찍히게하기
+            
+            var div = document.getElementsByTagName("div");
+            console.log(div[0]);
+
+            // childNodes는 자식태그들을 얻어옵니다.
+            // 단, 자식태그에서는 html문서상 개행을 위해 친
+            // 엔터키까지 text로 잡히니 주의
+            // div태그(변수)의 자식들을 콘솔에 찍기
+            console.log(div[0].childNodes);
+
+            // children으로 자식태그를 얻어오면
+            // childrennodes와 유사하지만 엔터키는 안나옴
+            console.log(div[0].children);
+
+            // 일일이 인덱싱으로 가져오기 복잡한 경우
+            // 첫번쨰나 마지막 요소등은 근접선택자에서 
+            // 따로 선택할 수 있는 옵션을 제공합니다.
+            // firstChild - 첫번째 자식태그
+            // lastChild - 마지막 자식태그
+            console.log(div[0].firstChild);
+
+            // previousSibling,nextSibling을 통해
+            // 형제 태그간 순번을 하나씩 뒤로 넘기거나
+            // 하나씩 앞으로 가져올 수 있습니다.
+            // #reset을 잡아서 변수에 저장하고 위 두명령어를 이용해
+            // increase와 decrease를 콘솔에 찍기
+
+            var resetBtn = document.getElementById("reset");
+            console.log(resetBtn.previousSibling.previousSibling);
+            console.log(resetBtn.nextSibling.nextSibling);
+            // tag 요소들끼리만 잡아서 가져오고 싶다면
+            // html에서는 태그요소를 element(요소)라고 부릅니다.
+            // 따라서 n/pElementSibling을 사용하면
+            // 태그끼리로만 다음요소,이전요소를 구분함
+            console.log(resetBtn.previousElementSibling);
+            console.log(resetBtn.nextElementSibling);
+
+            // 이제 이벤트를 자바스크립트로 붙여서 버튼클릭시
+            // 숫자값이 변하도록 하기
+
+            // onclick은 태그내에 onclick="함수명()"; 형식으로 연결가능
+            // 얻어온변수.onclick=function(){}; 형식으로도 지정가능
+            // innerText는 여닫는 태그 사이의 텍스트를 의미합니다.
+            // incBtn에 onclick을 걸어서 클릭할떄마다 number의 
+            // innerText값이 1 씩 증가하도록 고치기
+            // innerText로 얻어오는 자료는 무조건 String으로 간주되므로
+            // parseInt()를 써서 int화 시키는 작업필요
+
+            // 먼저,incBtn을 클릭하면 number의 innerText값이 콘솔에 찍히게 하기
+
+            // 위 미션을 다하면 reset,decrease버튼에도 이벤트 걸기
+            
+            // 위에 다하면 div태그내에 #red,#blue,#black 버튼추가하기
+            // 각버튼 클릭시 #number의 글씨색이 해당버튼에 적힌 색깔로 바뀌게하기
+
+            incBtn.onclick=function(){
+            number.innerText=parseInt(number.innerText)+1;
+            }
+            resetBtn.onclick=function(){
+                //number.innerText=parseInt(number.innerText)*0;
+                number.innerHTML=0;
+            }
+
+            decBtn.onclick=function(){
+                number.innerText=parseInt(number.innerText)-1;
+            }
+
+            var redd = document.getElementById("red");
+            var bluee = document.getElementById("blue");
+            var blackk = document.getElementById("black");
+
+            redd.onclick=function(){
+            number.style.color="red";
+            }
+            bluee.onclick=function(){
+            number.style.color="blue";
+            }
+            blackk.onclick=function(){
+            number.style.color="black";
+            }
+            
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="number">0</h1>
+    <div>
+        <button id="increase">+1</button>
+        <button id="reset">0</button>
+        <button id="decrease">-1</button>
+        </br>
+        <button id="red">레드</button>
+        <button id="blue">블루</button>
+        <button id="black">블랙</button>
+        <br/>
+    </div>
+</body>
+</html>
